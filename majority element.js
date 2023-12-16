@@ -16,18 +16,32 @@ Output: 2
 
 */
 
+// brut force :
 var majorityElement = function(nums) {
-    //base case
-    if(nums.lenth == 1){
-        return nums;
+    // Base case
+    if (nums.length === 1) {
+        return nums[0]; // Return the single element in the array
     }
-    
-    const numsMap = new Map();
 
-    for(let i = 1; i < nums.length ; i++)
-    {
-        const 
+    let counter = 0;
+    let majority = null;
+
+    for (let i = 0; i < nums.length; i++) {
+        let currentCount = 0;
+
+        for (let j = i + 1; j < nums.length; j++) {
+            if (nums[i] === nums[j]) {
+                currentCount += 1;
+            }
+        }
+
+        if (currentCount > counter) {
+            counter = currentCount;
+            majority = nums[i];
+        }
     }
+
+    return majority;
 };
 
-majorityElement([1,2,3,4,4,4,5,2,5])
+console.log(majorityElement([1, 2, 3, 4, 4, 4, 5, 2, 5]));
