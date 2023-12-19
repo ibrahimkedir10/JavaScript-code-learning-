@@ -3,12 +3,9 @@
 * apply: Calls a function with a specified this value and arguments provided as an array.
 * bind: Creates a new function with a specified this value and initial arguments, without invoking it immediately. */
 
-function Person(name, age) {
-    this.name = name;
-    this.age = age;
-    console.log(this.name + " " + this.age);
-  }
-  
+//part 1
+/*
+
   function Person(name, age) {
     this.name = name;
     this.age = age;
@@ -31,4 +28,16 @@ function Person(name, age) {
   const person3 = {};
   const boundFunction = Person.bind(person3, "Alice", 28);
   boundFunction(); // Outputs: Alice 28
-  
+  */
+
+
+
+   function School (name, numberOfStudents){
+    this.name = name;
+    this.numberOfStudents = numberOfStudents;
+    console.log(name +" number of students: "+ numberOfStudents+"number of profesors: "+ this.numberofProfesors );
+  }
+
+  var numberofProfesors ={numberofProfesors:100};
+
+  School.call(numberofProfesors, "la salle unversity",2000);
