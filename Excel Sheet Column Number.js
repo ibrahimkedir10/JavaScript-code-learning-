@@ -54,14 +54,24 @@ console.log(convertToTitle("AB"));
 
 //NUMBERS TO LETTERS 
 var convertToTitle = function(columnNumber) {
-    // create varable to hold output sting 
-    let results = "";
-    
-    // create a forloop that goes through the  number length 
-    for(let i = 0; i< columnNumber ; i++){
-        // varable to hold coverted value:
-        const convert = columnNumber.charCodeAT
+    let result = "";
+
+    while (columnNumber > 0) {
+        // Calculate the remainder when dividing by 26
+        const remainder = (columnNumber - 1) % 26;
+
+        // Convert the remainder to a letter and append it to the result
+        result = String.fromCharCode('A'.charCodeAt(0) + remainder) + result;
+
+        // Update columnNumber to the quotient when dividing by 26
+        columnNumber = Math.floor((columnNumber - 1) / 26);
     }
+
+    return result;
 };
 
-    convertToTitle(10);
+// Example usage:
+const columnNum = 27;
+const columnLetter = convertToTitle(columnNum);
+
+console.log(`The column number ${columnNum} corresponds to the Excel column letter '${columnLetter}'.`);
