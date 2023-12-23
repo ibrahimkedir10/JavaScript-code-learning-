@@ -29,7 +29,30 @@ d.next = e;
 };
  print1(a);
 
- 
+///////
+console.log ("----------------")
+ // converting Linked List to Array iteratively 
+ const arrayToNode1 = function (head) {
+    let array= [];
+    while(head !== null){
+        array.push(head.val);
+       return  array.concat(arrayToNode1(head.next));
+        
+    }
+}
+console.log(arrayToNode1(a));
+
+
+
+
+
+// ^^^^^^^^  Iteratively
+//---------------------------------------------------------------------------------------
+// vvvvvvvvv Recurisvly 
+
+
+
+
 ///////
 console.log ("----------------")
  // recursivly (includes a base case and calls itself in order to solve a problem) triaversal (visiting or accessing each element in a data structure in a specific order.) :
@@ -47,3 +70,20 @@ console.log ("----------------")
     }
  }
  print2(a);
+
+
+///////
+console.log ("----------------")
+ // converting Linked List to Array Recursivly
+ const arrayToNode2 = function (head) {
+    // base case: if node is null, return empty array
+    if (head === null) {
+        return [];
+    } else {
+        const array = [head.val];
+        // recursive call with the next node and concatenate the result
+        return  array.concat(arrayToNode2(head.next));
+        
+    }
+}
+console.log(arrayToNode2(a));
