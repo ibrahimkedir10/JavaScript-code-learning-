@@ -17,6 +17,7 @@ b.next = c;
 c.next = d;
 d.next = e;
 
+
 //linked list iterative (repetition or looping) triaversal (visiting or accessing each element in a data structure in a specific order.) :
 
  const print1 = function(head){
@@ -28,7 +29,7 @@ d.next = e;
     }
 };
  print1(a);
-
+/*
 ///////
 console.log ("----------------")
  // converting Linked List to Array iteratively 
@@ -42,8 +43,53 @@ console.log ("----------------")
 }
 console.log(arrayToNode1(a));
 
+//--------------------------
+console.log ("-------sum---------")
+ // sum of linked list Iterativley 
+ const sum1 = function(head){
+  let sumVal = 0;
+  while(head !== null ){
+    sumVal += head.val;
+    head = head.next;
+  }
+  console.log(sumVal);
 
+ } 
+ sum1(a);
 
+ //--------------------------
+console.log ("--------target--------")
+// sum of linked list Iterativley 
+const target1 = function(head,target){
+  while(head !== null){
+    if(target = head.val){
+        console.log("found");
+        break;
+    }
+    else{
+        head = head.next;
+    }
+  }
+}
+target1(a,"C");
+
+ //--------------------------
+ console.log ("--------reverseList--------")
+ // sum of linked list Iterativley 
+ const reverseList = function(head){
+  //head points to -> head.next points to-> head.next points to-> prev
+  let prev = null;
+let current = head;
+  while(current !== null){
+    let next = current.next;
+    current.next = prev;
+    prev = current;
+    current = next;
+
+  }
+  console.log("1");
+ }
+ reverseList(a);
 
 
 // ^^^^^^^^  Iteratively
@@ -87,3 +133,4 @@ console.log ("----------------")
     }
 }
 console.log(arrayToNode2(a));
+*/
