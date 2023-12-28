@@ -31,6 +31,7 @@ d.next = e;
  print1(a);
 */
 ///////
+/*
 console.log ("----------------")
  // converting Linked List to Array iteratively 
  const arrayToNode1 = function (head) {
@@ -42,7 +43,8 @@ console.log ("----------------")
     }
 }
 console.log(arrayToNode1(a));
-
+*/
+/*
 //--------------------------
 console.log ("-------sum---------")
  // sum of linked list Iterativley 
@@ -56,7 +58,7 @@ console.log ("-------sum---------")
 
  } 
  sum1(a);
-
+/*
  //--------------------------
 console.log ("--------target--------")
 // sum of linked list Iterativley 
@@ -72,7 +74,8 @@ const target1 = function(head,target){
   }
 }
 target1(a,"C");
-
+*/
+/*
  //--------------------------
  console.log ("--------reverseList--------")
  // sum of linked list Iterativley 
@@ -80,17 +83,19 @@ target1(a,"C");
   //head points to -> head.next points to-> head.next points to-> prev
   let prev = null;
   let current = head;
+  let next = null;
   while(current !== null){
-    let next = current.next;
+    next = current.next;
     current.next = prev;
     prev = current;
     current = next;
 
   }
-  console.log("1");
+  return prev;
+  
  }
- reverseList(a);
-
+ console.log((reverseList(a)));
+*/
 
 // ^^^^^^^^  Iteratively
 //---------------------------------------------------------------------------------------
@@ -133,4 +138,31 @@ console.log ("----------------")
     }
 }
 console.log(arrayToNode2(a));
+
+*/
+
+/// ----reverse recursivly -----------
+const reverseRecursivly = function(head){
+// create base case followed by call on itself
+//base case:
+let pre = null;
+let current = head;
+let next  = head.next 
+if(head == null){
+    return head;
+}else
+{
+    next = prev;
+    prev = current;
+    current= current.next;
+}
+return prev;
+}
+
+console.log(reverseRecursivly(a));
+
+/* a -> b-> c-> d -> e -> null
+pre = null | = a | pre => current
+current = a | b | current  => current.next
+next = b | null | next = > null
 */
