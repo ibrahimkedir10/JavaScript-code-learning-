@@ -78,17 +78,16 @@ target1(a,"C");
 /*
  //--------------------------
  console.log ("--------reverseList--------")
- // sum of linked list Iterativley 
  const reverseList = function(head){
   //head points to -> head.next points to-> head.next points to-> prev
   let prev = null;
   let current = head;
   let next = null;
   while(current !== null){
-    next = current.next;
-    current.next = prev;
-    prev = current;
-    current = next;
+    next = current.next; // Save the next node
+    current.next = prev; // Reverse the link
+    prev = current; // Move to the next pair of nodes
+    current = next; // Move to the next pair of nodes
 
   }
   return prev;
@@ -97,9 +96,20 @@ target1(a,"C");
  console.log((reverseList(a)));
 */
 
+
+
+
+
+
 // ^^^^^^^^  Iteratively
 //---------------------------------------------------------------------------------------
 // vvvvvvvvv Recurisvly 
+
+
+
+
+
+
 
 
 
@@ -124,7 +134,7 @@ console.log ("----------------")
 */
 /*
 ///////
-console.log ("----------------")
+console.log ("--------linked list to Array--------")
  // converting Linked List to Array Recursivly
  const arrayToNode2 = function (head) {
     // base case: if node is null, return empty array
@@ -139,29 +149,31 @@ console.log ("----------------")
 }
 console.log(arrayToNode2(a));
 
-*/
+
 
 /// ----reverse recursivly -----------
+
 const reverseRecursivly = function(head){
 // create base case followed by call on itself
 //base case:
-let pre = null;
-let current = head;
-let next  = head.next 
-if(head == null){
+
+if(head === null || head.next === null){
     return head;
-}else
-{
-    next = prev;
-    prev = current;
-    current= current.next;
 }
-return prev;
+    const reverse = reverseRecursivly(head.next);
+   head.next.next = head;
+   head.next = null;
+return reverse;
 }
 
 console.log(reverseRecursivly(a));
+*/
 
-/* a -> b-> c-> d -> e -> null
+
+
+
+/*
+ a -> b-> c-> d -> e -> null
 pre = null | = a | pre => current
 current = a | b | current  => current.next
 next = b | null | next = > null
