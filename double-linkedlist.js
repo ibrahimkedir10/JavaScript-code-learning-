@@ -1,4 +1,4 @@
-class doubleLinkedList{
+class Node{
         constructor(val) {
             this.val = val;
             this.next = null;
@@ -24,3 +24,24 @@ class doubleLinkedList{
     d.next = e;
     e.prev = d;
     
+//linked list iterative (repetition or looping) triaversal (visiting or accessing each element in a data structure in a specific order.) :
+
+const print1 = function(head){
+
+    let current = head;
+    while(current != null){
+        console.log(current.val + "->");
+        current= current.next; 
+    }
+};
+ print1(a);
+
+ const printBackward = function(tail) {
+    let current = tail;
+    while (current !== null) {
+        console.log(current.val + "<-");
+        current = current.prev;
+    }
+};
+
+printBackward(e);
