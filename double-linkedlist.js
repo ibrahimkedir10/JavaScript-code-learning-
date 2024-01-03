@@ -45,3 +45,25 @@ const print1 = function(head){
 };
 
 printBackward(e);
+
+function reverseDoublyLinkedList(head) {
+    let current = head;
+    let temp = null;
+
+    while (current !== null) {
+        // Swap next and prev pointers for the current node
+        temp = current.prev;
+        current.prev = current.next;
+        current.next = temp;
+
+        // Move to the next node
+        current = current.prev;
+    }
+
+    // Update the head to the last node (which was the original tail)
+    if (temp !== null) {
+        head = temp.prev;
+    }
+
+    return head;
+}
