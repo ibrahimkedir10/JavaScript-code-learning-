@@ -58,3 +58,32 @@ var hasCycle = function(head) {
 };
 
 hasCycle(a1);
+
+
+// --------find length of circle-----------
+
+var LengthOfCycle = function(head) {
+    let fast = head;
+    let slow = head;
+
+    while(fast !== null && fast.next !== null){
+        fast = fast.next.next;
+        slow = slow.next;
+        
+        if(fast == slow){
+            let temp = slow;
+            let length = 0;
+            do{
+                temp = temp.next
+                length++;
+            }while (temp != slow)
+            console.log(length);
+            return length;
+        }
+    }
+    console.log(0);
+    return 0;
+    
+};
+
+LengthOfCycle(a1);
