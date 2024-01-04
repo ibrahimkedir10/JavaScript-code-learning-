@@ -32,6 +32,7 @@ const a2 = new ListNode(1);
 const b2 = new ListNode(3);
 const c2 = new ListNode(4);
 
+
 a2.next = b2;
 b2.next = c2;
 
