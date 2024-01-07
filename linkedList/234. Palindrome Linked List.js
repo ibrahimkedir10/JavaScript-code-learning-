@@ -28,22 +28,49 @@ e.next = f;
 
 
 var isPalindrome = function(head) {
-
- const middle = function(){
+    let orgcurrent = head;
     let fast = head;
     let slow = head;
-    while (fast !== null && fast.next !== null) {
-        fast = fast.next.next;
-        slow = slow.next;
+    const middle = function() {
+        while (fast !== null && fast.next !== null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        console.log(slow);
     }
-   
-    console.log(slow);
-}
 
-    // revse it 
-
-     
     middle();
+
+    let current = slow.next;
+    let next = null;
+    let prev = slow;
+    const reverse = function() {
+        while (current !== null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        slow.next = null; // Break the original list from the middle
+    }
+
+    reverse();
+
+    const compare = function() {
+        while (prev !== null) {
+            if (prev.val === orgcurrent.val) {
+                prev = prev.next;
+                orgcurrent = orgcurrent.next;
+            } else {
+                console.log(false);
+                return false;
+            }
+        }
+        console.log(true);
+        return true;
+    }
+
+    return compare();
 }
 
-isPalindrome(a)
+isPalindrome(a);
