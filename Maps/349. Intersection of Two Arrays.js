@@ -14,19 +14,34 @@ Output: [9,4]
 Explanation: [4,9] is also accepted.
  */
 var intersection = function(nums1, nums2) {
+   /* brute force: 
     const newArray = [];
     for(const i of nums1){
         for(const j of nums2){
-            if(i === j ){
+            if(i === j && !newArray.includes(i)){
                 newArray.push(i);
             }
         }
     }
 
+    return newArray;
     console.log(newArray);
+*/
+// using sets 
 
+
+// Find the intersection using Set's built-in methods
+    const set1 = new Set(nums1);
+    const set2 = new Set(nums2);
     
-
+    const intersectionArray = Array.from(set1).filter(function(num) {
+        return set2.has(num);
+    });
+    
+    return intersectionArray;
 };
+
+
+
 
 intersection([1,2,3,4],[1,5,7,2]);
