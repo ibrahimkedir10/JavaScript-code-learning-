@@ -1,7 +1,7 @@
 // Creating an empty hashmap
 let myMap = {};
 
-// Inserting key-value pairs to the hashmap
+// Inserting/ setting key-value pairs to the hashmap
 myMap["name"] = "John";
 myMap["age"] = 25;
 myMap["city"] = "Example City";
@@ -25,4 +25,16 @@ for (let key in myMap) {
 
 // Removing a key-value pair from the hashmap
 delete myMap["age"];
-console.log("After removing age:", myMap);
+//console.log("After removing age:", myMap);
+
+//-----------------------------------------------------------------------
+
+// creating Map
+let ageMap = new Map([["max",23], ["john", 25]]);
+
+// accessing map
+console.log(ageMap);
+
+//checking Map size
+console.log(ageMap.size);
+

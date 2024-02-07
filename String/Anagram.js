@@ -17,7 +17,6 @@ Output: false
 var isAnagram = function(s, t) {
     
     // brute force :
-    // if stings dont have the same length return false;
     // Sort both strings
     const sortedS = s.split('').sort().join('');
     const sortedT = t.split('').sort().join('');
@@ -33,4 +32,4 @@ var isAnagram = function(s, t) {
 };
 
 
-isAnagram("hello","ehlol")
+isAnagram("hello","ehlol");
