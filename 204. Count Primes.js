@@ -17,10 +17,8 @@ Example 3:
 Input: n = 1
 Output: 0
 
-*/
 
-var countPrimes = function(n) {
-    //counter to store primes
+//counter to store primes
     let counter = 0;
     
     // rever through thte all prossible numbers from n -> 0
@@ -40,6 +38,30 @@ var countPrimes = function(n) {
     }
 
     console.log(counter);
+
+*/
+
+var countPrimes = function(n) {
+    // create counter to store primes
+    let counter =0;
+    // loop through n 
+    for(let i =n; i >1 ; i--){
+        let primecheck = true;
+        for(let j=2 ; j< i; j++){
+            if(i%j ===0){
+                primecheck = false;
+                break;
+                
+            }
+        }
+       if(primecheck){
+        counter++;
+       } 
+    }
+
+    console.log(counter);
 };
 
 countPrimes(10);
+
+// output : 2,3,5,7
