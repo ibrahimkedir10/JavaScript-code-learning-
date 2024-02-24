@@ -21,8 +21,10 @@ Input: nums = [5,4,-1,7,8]
 Output: 23
 Explanation: The subarray [5,4,-1,7,8] has the largest sum 23.
 
+
 */
 var maxSubArray = function(nums) {
+
     let max = nums[0]; // Initialize max with the first element of nums
     let sum = 0; // Initialize sum to 0
     for(let i = 0; i < nums.length; i++) {
@@ -33,4 +35,6 @@ var maxSubArray = function(nums) {
     console.log(max);
 };
 
-maxSubArray([-2,1,-3,4,-1,2,1,-5,4])
+maxSubArray([-2,1,-3,4,-1,2,1,-5,4]);
+
+
