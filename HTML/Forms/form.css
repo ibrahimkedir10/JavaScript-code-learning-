@@ -7,13 +7,18 @@ body{
 color: rgb(177, 107, 107);
 
 }
+section.inputes{
+    width:auto;
+
+}
+
 
 div.divInput{
     display: flex;
     position: relative;
     align-items: right; /* Aligns items vertically in the center */
     margin-bottom: 10px; /* Adds space between the rows */
-   
+    width: 50%;
 }
 
 .divInput label {
@@ -27,4 +32,33 @@ div.divInput{
     border-radius: 10px;
     border-style: outset;
     box-shadow: 10px 10px 10px #333;
+}
+
+input.inputFeild{
+    height: 20px;
+    width: 200px;
+    border-radius: 4px;
+}
+
+section.buttons{
+    justify-content: left;
+    margin: 5px;
+}
+
+.btn{
+   background-color: rgb(183, 239, 220); 
+   border-radius: 10px;
+   border-color: #333;
+   height: 50px;
+   width: 100px;
+   margin: 10px;
+   
+}
+
+.btn:active, 
+.btn:hover{
+    background-color: rgb(246, 164, 164);
+    box-shadow: 1px 10px 15px black;
+    height: 60px;
+    width: 120px;
 }
