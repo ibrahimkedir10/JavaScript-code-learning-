@@ -1,0 +1,30 @@
+body{
+    background-color: antiquewhite;
+    color: rgb(0, 0, 0);
+}
+
+.header1{
+color: rgb(177, 107, 107);
+
+}
+
+div.divInput{
+    display: flex;
+    position: relative;
+    align-items: right; /* Aligns items vertically in the center */
+    margin-bottom: 10px; /* Adds space between the rows */
+   
+}
+
+.divInput label {
+    width: 100px; /* Sets a fixed width for labels */
+    margin-right: 1px; /* Adds space between the label and the input field */
+}
+
+.inputes{
+    background-color: rgb(209, 209, 225);
+    padding: 10px;
+    border-radius: 10px;
+    border-style: outset;
+    box-shadow: 10px 10px 10px #333;
+}
