@@ -1,3 +1,5 @@
+//form.js
+
 document.querySelectorAll('.toggle-password').forEach(function(toggle) {
     toggle.addEventListener('click', function() {
         const input = this.previousElementSibling; // the input field
