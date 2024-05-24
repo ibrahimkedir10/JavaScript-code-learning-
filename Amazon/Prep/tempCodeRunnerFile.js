@@ -1,1 +1,1 @@
-productCharacter
+0
