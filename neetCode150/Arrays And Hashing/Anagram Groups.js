@@ -21,12 +21,9 @@ Output: [[""]]
 
 */
 
-class Solution {
-    /**
-     * @param {string[]} strs
-     * @return {string[][]}
-     */
-    groupAnagrams(strs) {
+// time complexity O(log n) 
+// space complexity O(n)
+ function groupAnagrams(strs) {
       
    const map = new Map();
 
@@ -40,5 +37,4 @@ class Solution {
     }
    }
    return Array.from(map.values());
-}
 }
