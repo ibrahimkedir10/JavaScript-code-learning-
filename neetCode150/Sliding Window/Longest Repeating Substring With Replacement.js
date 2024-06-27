@@ -17,3 +17,38 @@ Input: s = "AAABABB", k = 1
 
 Output: 5
 */
+function characterReplacement(s, k) {
+    let left = 0;
+let maxCount = 0; // Track the maximum frequency of any character in the current window
+let result = 0;
+let letterFrequency = new Map();
+
+for (let right = 0; right < s.length; right++) {
+   let char = s[right];
+   if (letterFrequency.has(char)) {
+       letterFrequency.set(char, letterFrequency.get(char) + 1);
+   } else {
+       letterFrequency.set(char, 1);
+   }
+
+   // Update maxCount with the maximum frequency of any character in the current window
+   maxCount = Math.max(maxCount, letterFrequency.get(char));
+
+   // Calculate the current window size
+   let windowSize = right - left + 1;
+
+   // If the number of replacements needed exceeds k, shrink the window from the left
+   if (windowSize - maxCount > k) {
+       let leftChar = s[left];
+       letterFrequency.set(leftChar, letterFrequency.get(leftChar) - 1);
+       left++;
+   }
+
+   // Update result with the maximum valid window size found so far
+   result = Math.max(result, right - left + 1);
+}
+
+return result;
+}
+
+
